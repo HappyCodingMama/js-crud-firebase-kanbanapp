@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="script.js" defer></script>
+    <title>Kanban Board</title>
+  </head>
+  <body>
+    <div class="kanban__container">
+      <div class="kanban__wrapper">
+        <div class="kanban__column">
+          <div class="kanban__column-title">Must to do</div>
+          <div class="kanban__items">
+            <div class="kanban__item-input">Wake up at 8</div>
+            <button class="kanban__edit-item">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
+            <button class="kanban__delete-item">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+            <div class="kanban__dropzone"></div>
+          </div>
+          <button class="kanban__add-item" type="button">+ Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- start of firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+
+    <script type="module">
+      var firebaseConfig = {
+        apiKey: 'AIzaSyDVmbOsYf0caLHafuLYeYFEQ6URC2rITL8',
+        authDomain: 'js-kanban-board.firebaseapp.com',
+        databaseURL: 'https://js-kanban-board-default-rtdb.firebaseio.com',
+        projectId: 'js-kanban-board',
+        storageBucket: 'js-kanban-board.appspot.com',
+        messagingSenderId: '522119797272',
+        appId: '1:522119797272:web:81fd0e07692dd123b1016d',
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- end of firebase -->
+  </body>
+</html>

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+
+:root {
+  --headingFont: 'Roboto Slab', serif;
+  --bodyFont: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--headingFont);
+}
+
+.kanban__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  .kanban__wrapper {
+    display: flex;
+    padding: 30px;
+    width: 750px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    .kanban__column {
+      flex: 1;
+      .kanban__column-title {
+        margin-bottom: 20px;
+        font-size: 20px;
+        user-select: none;
+      }
+      .kanban__items {
+        display: flex;
+        width: 100%;
+        gap: 16px;
+
+        .kanban__item-input {
+          flex: 3;
+          padding: 10px 15px;
+          background-color: white;
+          border: 1px solid rgb(213, 213, 213);
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .kanban__edit-item {
+          cursor: pointer;
+          background-color: transparent;
+          color: black;
+          border: none;
+        }
+        .kanban__delete-item {
+          cursor: pointer;
+          background-color: transparent;
+          color: black;
+          border: none;
+        }
+        .kanban__dropzone {
+          height: 10px;
+          transition: background-color 0.2s, height 0.15s;
+        }
+
+        .kanban__dropzone--active {
+          height: 20px;
+          background-color: rgba(0, 0, 0, 0.023);
+        }
+      }
+      .kanban__add-item {
+        font-family: var(--headingFont);
+        margin-top: 1rem;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: white;
+        background-color: rgb(224, 224, 224);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .kanban__add-item:hover {
+        background-color: rgb(255, 162, 162);
+      }
+      .kanban__column:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+}
